@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Network & Connectivity | Cirrux Networks</title>
+<meta name="description" content="Cirrux Networks delivers broadband, Ethernet, dedicated internet, MPLS, and SD-WAN solutions tailored to your business."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a1628;--navy2:#0f2040;--orange:#00AEEF;--blue:#00AEEF;
+  --ice:#e8f7fd;--white:#fff;--gray:#f4f8fb;--muted:#6b7899;
+  --border:#dde8f0;--text:#1a2340;
+  --display:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+  --radius:10px;
+  --shadow:0 4px 24px rgba(0,174,239,0.10);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#ffffff;backdrop-filter:none;border-bottom:1px solid #dde3f0;box-shadow:0 2px 12px rgba(0,0,0,0.08);height:150px;display:flex;align-items:center}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:#1a2340;transition:color .2s}
+.nav-links a:hover{color:#00AEEF}
+.nav-cta{background:var(--orange)!important;color:#fff!important;padding:10px 22px;border-radius:6px;font-weight:600!important}
+.nav-cta:hover{background:#0096d6!important}
+
+/* Hero banner */
+.page-hero{background:var(--navy);padding:210px 28px 80px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 80% 50%,rgba(0,174,239,0.10) 0%,transparent 70%)}
+.page-hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.breadcrumb a{color:rgba(255,255,255,0.4);transition:color .2s}
+.breadcrumb a:hover{color:rgba(255,255,255,.8)}
+.breadcrumb span{color:rgba(255,255,255,.6)}
+.page-hero h1{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:620px;line-height:1.8}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-tag{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em}
+
+/* Main content */
+.page-body{max-width:1180px;margin:0 auto;padding:80px 28px 40px;display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start}
+@media(max-width:900px){.page-body{grid-template-columns:1fr;gap:48px}}
+
+/* Section labels */
+.section-label{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-label::before{content:'';width:24px;height:2px;background:var(--orange);border-radius:2px}
+.section-title{font-family:var(--display);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;color:var(--navy);margin-bottom:16px}
+.lead{font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:36px}
+
+/* Feature grid */
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:36px 0}
+@media(max-width:640px){.feature-grid{grid-template-columns:1fr}}
+.feature-card{background:var(--gray);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:box-shadow .2s,border-color .2s}
+.feature-card:hover{box-shadow:var(--shadow);border-color:rgba(232,146,42,.3)}
+.feature-icon{font-size:24px;margin-bottom:12px}
+.feature-card h3{font-family:var(--display);font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.feature-card p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* Checklist */
+.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0}
+.check-list li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text);line-height:1.6}
+.check-list li::before{content:'✓';min-width:22px;height:22px;border-radius:50%;background:rgba(0,174,239,0.10);color:var(--orange);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;flex-shrink:0}
+
+/* Portfolio table */
+.portfolio-section{margin:48px 0}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+@media(max-width:640px){.portfolio-grid{grid-template-columns:1fr}}
+.portfolio-card{background:var(--navy);border-radius:var(--radius);padding:24px}
+.portfolio-card h4{font-family:var(--display);font-size:.9rem;font-weight:700;color:var(--blue);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.portfolio-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.portfolio-card ul li{font-size:13px;color:rgba(255,255,255,.65);padding-left:14px;position:relative}
+.portfolio-card ul li::before{content:'›';position:absolute;left:0;color:var(--orange)}
+
+/* Sidebar */
+.sidebar{position:sticky;top:88px}
+.sidebar-card{background:var(--navy);border-radius:12px;padding:28px;margin-bottom:20px;color:#fff}
+.sidebar-card h3{font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:14px}
+.sidebar-card p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px}
+.sidebar-btn{display:block;background:var(--orange);color:#fff;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;transition:background .2s}
+.sidebar-btn:hover{background:#0096d6}
+.sidebar-nav{background:var(--gray);border:1px solid var(--border);border-radius:12px;padding:24px}
+.sidebar-nav h4{font-family:var(--display);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:14px}
+.sidebar-nav ul{list-style:none;display:flex;flex-direction:column;gap:2px}
+.sidebar-nav ul a{display:block;font-size:14px;color:var(--text);padding:8px 12px;border-radius:6px;transition:background .15s,color .15s}
+.sidebar-nav ul a:hover,.sidebar-nav ul a.active{background:var(--ice);color:var(--orange);font-weight:500}
+
+/* CTA band */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:72px 28px;text-align:center;margin-top:0}
+.cta-band h2{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:14px}
+.cta-band p{font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-block;background:var(--orange);color:#fff;padding:15px 36px;border-radius:8px;font-weight:700;font-size:15px;font-family:var(--display);box-shadow:0 4px 20px rgba(0,174,239,0.38);transition:background .2s,transform .15s}
+.cta-btn:hover{background:#0096d6;transform:translateY(-2px)}
+
+/* Footer */
+footer{background:#060f1c;padding:56px 28px 28px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{max-width:1180px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.4);line-height:1.75;max-width:260px}
+.footer-col h4{font-family:var(--display);font-size:12px;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col ul a{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s}
+.footer-col ul a:hover{color:rgba(255,255,255,.8)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:12px;color:rgba(255,255,255,.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.6)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+
+@media(max-width:640px){
+  .page-hero{padding:120px 20px 60px}
+  nav .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" style="display:flex;align-items:center;line-height:1;">
+      <img src="cirrux-logo.png" alt="Cirrux Networks" style="height:195px;width:auto;display:block;" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#solutions">Solutions</a></li>
+      <li><a href="index.html#process">Our Process</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="index.html#solutions">Solutions</a> › <span>Network & Connectivity</span></div>
+    <h1>Network & Connectivity</h1>
+    <p>The right network is the foundation of everything your business does. Cirrux Networks provides vendor-agnostic design, sourcing, and lifecycle management for every type of enterprise connectivity — from broadband to dedicated fiber to nationwide MPLS.</p>
+    <div class="hero-tags"><span class="hero-tag">Broadband</span><span class="hero-tag">Ethernet</span><span class="hero-tag">Dedicated Internet</span><span class="hero-tag">MPLS</span><span class="hero-tag">Fiber</span><span class="hero-tag">Wireless Broadband</span><span class="hero-tag">Network Assessment</span></div>
+  </div>
+</div>
+<div class="page-body">
+  <main><div class="reveal">
+  <div class="section-label">Network &amp; Connectivity</div>
+  <h2 class="section-title">Enterprise Connectivity, Simplified</h2>
+  <p class="lead">We've helped hundreds of organizations assess, redesign, and optimize their network infrastructure. Our advisors align technology decisions with your business objectives — not carrier incentives — so you always get the right solution at the right price.</p>
+</div>
+
+<div class="feature-grid reveal rd1">
+  <div class="feature-card">
+    <div class="feature-icon">🔍</div>
+    <h3>Network Assessment</h3>
+    <p>We audit your existing circuits, contracts, and costs — mapping every service to a business requirement and exposing waste, overcharges, and underperforming connections.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🏗️</div>
+    <h3>Architecture Design</h3>
+    <p>Our engineers design networks built for performance, scalability, and security — with a roadmap that grows with your business rather than locking you into yesterday's topology.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🤝</div>
+    <h3>Vendor Selection & Sourcing</h3>
+    <p>We leverage relationships with 200+ carriers to gather competitive bids, negotiate pricing, and secure contracts that reflect true market rates — not rack rates.</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">⚙️</div>
+    <h3>Implementation &amp; Lifecycle</h3>
+    <p>We manage provisioning, installation coordination, and carrier escalations from day one through decommission — including all moves, adds, changes, and disconnects.</p>
+  </div>
+</div>
+
+<div class="portfolio-section reveal">
+  <div class="section-label">Solutions Portfolio</div>
+  <h2 class="section-title">What We Deliver</h2>
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <h4>🌐 Wired Connectivity</h4>
+      <ul>
+        <li>Broadband (Cable / DSL / Fixed Wireless)</li>
+        <li>Business Ethernet (10Mbps – 100Gbps)</li>
+        <li>Dedicated Internet Access (DIA)</li>
+        <li>MPLS / Private IP Networks</li>
+        <li>Dark &amp; Lit Fiber</li>
+        <li>Point-to-Point Circuits</li>
+      </ul>
+    </div>
+    <div class="portfolio-card">
+      <h4>📡 Wireless &amp; Backup</h4>
+      <ul>
+        <li>Wireless Broadband / LTE / 5G Fixed</li>
+        <li>Failover &amp; Business Continuity Links</li>
+        <li>Satellite Connectivity</li>
+        <li>In-Building Wireless (DAS / Wi-Fi)</li>
+        <li>IoT Connectivity</li>
+      </ul>
+    </div>
+    <div class="portfolio-card">
+      <h4>🔧 Management Services</h4>
+      <ul>
+        <li>Network Monitoring &amp; Alerting</li>
+        <li>Carrier Trouble Ticket Management</li>
+        <li>Contract &amp; Renewal Management</li>
+        <li>Invoice Auditing &amp; Dispute Resolution</li>
+        <li>Performance Reporting</li>
+      </ul>
+    </div>
+    <div class="portfolio-card">
+      <h4>📋 Advisory</h4>
+      <ul>
+        <li>Current State Assessment</li>
+        <li>RFP / RFI Management</li>
+        <li>Technology Roadmapping</li>
+        <li>Multi-Location Rollout Planning</li>
+        <li>Budget Optimization</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="reveal">
+  <div class="section-label">Why Cirrux</div>
+  <h2 class="section-title">Your Advocate, Not a Carrier Rep</h2>
+  <ul class="check-list">
+    <li>We are 100% vendor-agnostic — we earn nothing from carriers or vendors directly</li>
+    <li>Access to 200+ national and regional carriers through a single point of contact</li>
+    <li>We manage the full lifecycle so your IT team focuses on higher-value work</li>
+    <li>Average client saves 20–35% on connectivity costs in the first year</li>
+    <li>Dedicated account manager who knows your environment end to end</li>
+    <li>Proven process for multi-site, multi-state, and international deployments</li>
+  </ul>
+</div></main>
+  <aside class="sidebar">
+  <div class="sidebar-card">
+    <h3>Ready to get started?</h3>
+    <p>Schedule a no-cost assessment. We'll review your environment and identify opportunities — zero pressure.</p>
+    <a href="contact.html" class="sidebar-btn">Schedule a Consultation</a>
+  </div>
+  <div class="sidebar-nav">
+    <h4>All Solutions</h4>
+    <ul><li><a href="network-connectivity.html" class="active">🌐 Network &amp; Connectivity</a></li>
+<li><a href="cybersecurity.html" >🔒 Cybersecurity</a></li>
+<li><a href="cloud.html" >☁️ Cloud &amp; Data Center</a></li>
+<li><a href="voice-ucaas.html" >📞 Voice &amp; UCaaS</a></li>
+<li><a href="sd-wan.html" >📡 SD-WAN / SASE</a></li>
+<li><a href="telecom-expense.html" >💰 Telecom Expense Mgmt</a></li></ul>
+  </div>
+</aside>
+</div>
+<div class="cta-band">
+  <h2>Let's Build Your Solution</h2>
+  <p>No cost. No obligation. Just a straightforward conversation about your environment and goals.</p>
+  <a href="contact.html" class="cta-btn">Schedule a Free Consultation</a>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="cirrux-logo.png" alt="Cirrux Networks" style="height:195px;width:auto;display:block;margin-bottom:16px;" />
+        <p>Vendor-agnostic technology consulting for modern enterprises. Connectivity, security, cloud, and voice — one partner.</p>
+      </div>
+      <div class="footer-col"><h4>Solutions</h4><ul>
+        <li><a href="network-connectivity.html">Network &amp; Connectivity</a></li>
+        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+        <li><a href="cloud.html">Cloud &amp; Data Center</a></li>
+        <li><a href="voice-ucaas.html">Voice &amp; UCaaS</a></li>
+        <li><a href="sd-wan.html">SD-WAN / SASE</a></li>
+        <li><a href="telecom-expense.html">Telecom Expense Mgmt</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#process">Our Process</a></li>
+        <li><a href="index.html#testimonials">Client Stories</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a href="contact.html">Get a Consultation</a></li>
+        <li><a href="tel:8005550192">(800) 555-0192</a></li>
+        <li><a href="mailto:hello@cirruxnetworks.com">hello@cirruxnetworks.com</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Cirrux Networks. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
