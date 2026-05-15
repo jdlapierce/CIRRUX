@@ -184,7 +184,15 @@ footer{background:#060f1c;padding:56px 28px 28px;border-top:1px solid rgba(255,2
   <div class="form-card">
     <h2>Schedule a Consultation</h2>
     <p class="form-sub">Fill out the form and a Cirrux advisor will be in touch within one business day.</p>
-    <form action="https://formspree.io/f/mykoqzlo" method="POST">
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms access key -->
+      <input type="hidden" name="access_key" value="e56db799-132c-4f1a-89c7-a5ff456b2d1b"/>
+      <!-- Custom email subject -->
+      <input type="hidden" name="subject" value="New Consultation Request — Cirrux Networks"/>
+      <!-- Redirect after submission -->
+      <input type="hidden" name="redirect" value="https://cirruxnet.com/contact.html?success=true"/>
+
       <div class="form-row">
         <div class="fg">
           <label for="first_name">First Name</label>
@@ -224,9 +232,59 @@ footer{background:#060f1c;padding:56px 28px 28px;border-top:1px solid rgba(255,2
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Tell us about your current environment or the challenge you're trying to solve…"></textarea>
       </div>
+
+      <!-- Honeypot spam prevention -->
+      <input type="checkbox" name="botcheck" style="display:none;"/>
+
       <button type="submit" class="sub-btn">Send Message</button>
     </form>
+
+    <!-- Success banner shown on redirect back -->
+    <div id="success-msg" style="display:none;background:#d1fae5;border:1px solid #6ee7b7;border-radius:8px;padding:32px;text-align:center;margin-top:16px;">
+      <div style="font-size:2.5rem;margin-bottom:12px;">✓</div>
+      <div style="font-weight:700;color:#065f46;font-size:1.1rem;margin-bottom:8px;">Message Sent!</div>
+      <div style="color:#047857;font-size:14px;line-height:1.7;">Thanks for reaching out. A Cirrux advisor will be in touch within one business day.</div>
+    </div>
   </div>
+
+  <script>
+    if (window.location.search.includes('success=true')) {
+      document.querySelector('.form-card form').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }
+  </script>
+
+  <script>
+    function sendEmail() {
+      var firstName = document.getElementById('first_name').value.trim();
+      var lastName  = document.getElementById('last_name').value.trim();
+      var email     = document.getElementById('email').value.trim();
+      var company   = document.getElementById('company').value.trim();
+      var phone     = document.getElementById('phone').value.trim();
+      var area      = document.getElementById('area').value;
+      var message   = document.getElementById('message').value.trim();
+
+      if (!firstName || !email) {
+        alert('Please enter at least your first name and email address.');
+        return;
+      }
+
+      var subject = encodeURIComponent('New Consultation Request — Cirrux Networks');
+      var body = encodeURIComponent(
+        'Name: ' + firstName + ' ' + lastName + '\n' +
+        'Email: ' + email + '\n' +
+        'Company: ' + company + '\n' +
+        'Phone: ' + phone + '\n' +
+        'Area of Interest: ' + area + '\n\n' +
+        'Message:\n' + message
+      );
+
+      window.location.href = 'mailto:info@cirruxnet.com?subject=' + subject + '&body=' + body;
+
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
 </div>
 <footer>
   <div class="footer-inner">
